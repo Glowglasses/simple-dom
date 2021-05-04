@@ -127,7 +127,7 @@ window.dom = {
     let index = 0;
     tem = node.previousSibling
     while(1){
-      if(tem.previousSibling === null){
+      if(tem === null){
         break
       }else if(tem.nodeType !== 3){
         index++
