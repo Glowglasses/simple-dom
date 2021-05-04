@@ -76,8 +76,8 @@ window.dom = {
   off(node, eventName, fn) {
     node.removeEventListener(eventName, fn)
   },
-  find(selectorValue) {
-    return document.querySelectorAll(selectorValue)
+  find(selectorValue, scape) {
+    return (document || scape).querySelectorAll(selectorValue)
   },
   parent(node) {
     return node.parentNode
