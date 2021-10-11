@@ -137,4 +137,18 @@ window.dom = {
     }
     return index
   },
+  delegate(agent, eventType, clientSelector, fn){
+      agent.addEventListener(eventType, (e)=>{
+            let el = e.target;
+            while(!el.matches(clientSelector)){
+                  if(el === agent){
+                        el === null;
+                        break;
+                  }
+                  el = el.parentNode;     
+            }
+            el && fn.call(el, e, el);
+      })
+      return agent;
+  }
 }
